@@ -16,6 +16,7 @@ function App() {
   const [wineType, setWineType] = useState("");
 
   const handleSubmit = () => {
+    //call Api after installing axuse package
     if (
       fixedAcidity === "" ||
       volatileAcidity === "" ||
@@ -33,8 +34,6 @@ function App() {
       alert("empty field");
     } else if (!/^[0-9\b]+$/.test(fixedAcidity)) {
       alert("Should Enter a Number");
-    } else if (wineType !== "red" || wineType !== "white") {
-      alert("Wine Type should be Red or White");
     }
   };
 
@@ -131,11 +130,14 @@ function App() {
         </div>
         <div className="form-group">
           <label>Wine Type</label>
-          <input
-            type="text"
+          <select
             className="form-control"
             onChange={(e) => setWineType(e.target.value)}
-          />
+          >
+            <option>Select Wine Type</option>
+            <option>Red</option>
+            <option>White</option>
+          </select>
         </div>
       </form>
       <button className="btn btn-success" onClick={handleSubmit}>
