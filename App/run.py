@@ -13,11 +13,19 @@ def index():
 
 
 def ValuePredictor(to_predict_list):
-    to_predict = np.array(to_predict_list).reshape(1,12)
-    # print(to_predict)
-    loaded_model = pickle.load(open("model.pkl","rb"))
-    result = loaded_model.predict(to_predict)
-    return result[0]
+    print(to_predict_list)
+    to_predict = np.array(to_predict_list[0:11]).reshape(1,11)
+    if(int(to_predict_list[-1])==0):
+        loaded_red_wine_model = pickle.load(open("model_red_wine.pkl","rb"))
+        result = loaded_red_wine_model.predict(to_predict)
+        return result[0]
+    else:
+        loaded_white_wine_model = pickle.load(open("model_white_wine.pkl","rb"))
+        result = loaded_white_wine_model.predict(to_predict)
+        return result[0]
+
+    
+    
 
 @app.route('/result',methods = ['POST'])
 def result():
