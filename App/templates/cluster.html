@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS only -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+        <!-- JS, Popper.js, and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Clustering</title>
+</head>
+<body style="background: rgb(185,16,16);background: linear-gradient(0deg, rgba(185,16,16,0.23573179271708689) 0%, rgba(254,247,195,1) 50%, rgba(185,16,16,1) 100%); background-repeat: no-repeat; height: 1000px;">
+    <h1 style="text-align: center; color: wheat; margin-top: 30px; margin-bottom: 5px;">Wine Data Clustering</h1>
+   <div class="container" style="background-color:#fce3e1; margin-top: 50px; width: 1000px; height: auto; margin-bottom: 50px; ">
+    <a href=home><button  type="button"  class="btn btn-outline-danger" style="align-items: center; margin-bottom: 30px; margin-left: 10px; color: black; margin-top: 10px;"><i class="fa fa-arrow-left"></i> Go Home</button ></a>
+        <div class="row">
+            
+                <div class="image-form" style="float: left; margin-left: -150px;">
+                    <img src="/static/images/cluster1.jpg" style="width: 350px; height: 400px; float: left; margin-top: 75px; margin-left: -20px;">
+                </div>
+        
+    <form action="{{url_for('show_plot')}}" method="POST" enctype="multipart/form-data" style="padding-top: 50px; margin-left: 100px;">
+        <!-- <input type="file" name="file" id="uploadfile"/> -->
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Upload</span>
+            </div>
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="uploadfile" name="file">
+              <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+            </div>
+          </div>
+        <!-- <input type="submit" value="subimt and view" id="submit"  /> -->
+        <div class="form-input" style="margin-left: 10px; width: 500px; margin-top: 5px;">
+                <label style="font-size: 15px;">Seperated Character</label>
+                <input type="text" class="form-control" id="a" name="a" required  style=" border-color: #38010d" placeholder="Enter Seperated Character in File">
+              </div>
+              <div class="form-input" style="margin-left: 10px; width: 500px; margin-top: 5px;">
+                <label style="font-size: 15px;">X Axis</label>
+                <input type="text" class="form-control" id="b" name="b" required  style=" border-color: #38010d" placeholder="Enter Column Number"/>
+              </div>
+              <div class="form-input" style="margin-left: 10px; width: 500px; margin-top: 5px;">
+                <label style="font-size: 15px;">Y Axis</label>
+                <input type="text" class="form-control" id="c" name="c" required  style=" border-color: #38010d" placeholder="Enter Column Number">
+              </div>
+              <div class="form-input" style="margin-left: 10px; width: 500px; margin-top: 5px;">
+                <label style="font-size: 15px;">Predicting Lable</label>
+                <input type="text" class="form-control" id="d" name="d" required  style=" border-color: #38010d" placeholder="Enter Predicting Lable Name">
+              </div>
+            <!-- <input type="submit" value="subimt and view" id="submit" /> -->
+            <button type="submit" value="subimt and view" class="btn" id="submit" style=" font-size: 15px; background-color: #a10630; color: white; margin-bottom: 50px; margin-left: 200px; margin-top: 20px;" >Visualize</button >
+        </form>
+        
+    </div>    
+        
+</div>  
+
+   
+   
+</body>
+</html>
