@@ -79,11 +79,6 @@ def show_plot():
     # cluster.cluster(file_name, str(cond_list[0]), int(cond_list[1]), int(cond_list[2]), str(cond_list[3])
     fig = cluster.cluster(file_name, str(cond_list[0]), int(cond_list[1]), int(cond_list[2]), str(cond_list[3]))
 
-
-
-
-    
-
     return render_template('cluster.html')
     
 

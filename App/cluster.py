@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import warnings
 import os
-import seaborn as sns
+# import seaborn as sns
 import matplotlib.pyplot as plt
 
 from sklearn.preprocessing import StandardScaler
@@ -89,11 +89,10 @@ def plot_cluster(x, dim_1, dim_2,y_train, df):
 
     plot.circle(x="x_comp_0", y="x_comp_1", source=cluster_results_source, color="color")
     plot.diamond(x="x_comp_0", y="x_comp_1", source=cluster_source, color="color", legend="label", size=20)
-
+    # from bokeh.io import export_png
     show(plot)
+    # export_png(plot, filename="static/plot.png")
     return plot
     
 
     
-# if __name__ == '__main__':
-#     cluster("data.csv", ";", 2, 5, "quality")
